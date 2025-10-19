@@ -1,0 +1,73 @@
+/****************
+ * XFCE DESKTOP *
+ ****************/
+
+/*
+   Contributor notes:
+   Please use two space indentions.
+   Stack all related and child selectors and selector states into a logical hierarchy to a readable degree.
+   Make sure that all changes made here are part of the XFCE desktop.
+*/
+
+/* Xfdesktop */
+XfdesktopIconView.view {
+  background-image: -gtk-gradient(linear, left top, right bottom, from (@xfd_icon_backdrop));
+  background-repeat: no-repeat;
+  background-position: 4px 4px;
+  background-size: calc(100% - 10px) calc(100% - 10px);
+  color: @selected_bg_color;
+  border-radius: 0px; 
+  background-color: rgba(0, 0, 0, 0)}
+  XfdesktopIconView.view:active {
+    background-image: -gtk-gradient(linear, left top, right bottom, from (@selected_bg_color));
+    text-shadow: none;
+    color: shade(@selected_bg_color, 3.0); }
+  XfdesktopIconView.view .label {
+    text-shadow: none;
+    color: #000000; }
+  XfdesktopIconView.view .rubberband {
+    border: 1px dotted @xfd_rubberband_outline;
+    background: rgba(0,0,50.2,0.01); }
+
+
+
+/* XFCE terminal */
+#xfce4-terminal-notebook overlay > box,
+#xfce4-terminal-notebook stack > box,
+#xfce4-terminal-notebook stack scrolledwindow {
+  margin: 0;
+  border: 2px solid @border_dark;
+  border-image: url("../assets/frame_inset.png");
+  border-image-slice: 2 2 2 2;
+  box-shadow: none; }
+  .fullscreen #xfce4-terminal-notebook overlay > box,
+  .fullscreen #xfce4-terminal-notebook stack > box,
+  .fullscreen #xfce4-terminal-notebook stack scrolledwindow,
+  .maximized #xfce4-terminal-notebook overlay > box,
+  .maximized #xfce4-terminal-notebook stack > box,
+  .maximized #xfce4-terminal-notebook stack scrolledwindow {
+    margin: 0px;
+    border: none;
+    border-image: none;
+    box-shadow: none; }
+#xfce4-terminal-notebook header tabs tab box {
+    padding: 0px;
+    margin-top: -4px;
+    margin-bottom: -4px; }
+  #xfce4-terminal-notebook header tabs tab button {
+    background: none;
+    border: none;
+    box-shadow: none; }
+  #xfce4-terminal-notebook header tabs tab button image {
+      padding: 0px;
+      margin-top: -1px;
+      margin-bottom: -2px; }
+
+/* XFCE Session logout dialogue */
+/* Doesn't look like this works, so moving it to the override... */
+.xfsm-logout-dialog {
+  border-left: 1px solid @border_bright;
+  border-top: 1px solid @border_bright;
+  border-bottom: 1px solid @border_dark;
+  border-right: 1px solid @border_dark;
+  box-shadow: inset -1px -1px @border_shade, inset 1px 1px @border_light; }
